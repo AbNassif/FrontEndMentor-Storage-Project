@@ -1,0 +1,231 @@
+/* Defaults */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+div.attribution {
+  position: absolute;
+  bottom: 20px;
+  font-weight: bolder;
+  color: white;
+}
+/* Content */
+
+body {
+  background-color: hsl(229, 57%, 11%);
+  background-image: url("images/bg-desktop.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 65%;
+  max-width: 832px;
+  min-width: 45rem;
+  min-height: 10rem;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 2%;
+}
+.main,
+.storage {
+  margin: 0 1rem;
+}
+
+.main {
+  background-color: hsl(228, 56%, 26%);
+  flex: 1;
+  border-radius: 5px 65px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 284px;
+  padding: 1rem 2rem;
+}
+
+.main img.logo {
+  width: 100px;
+}
+
+.linkContainer {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.linkContainer a {
+  background-color: hsl(229, 57%, 11%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.linkcontainer a img {
+  width: 100%;
+}
+
+.storage {
+  flex: 2;
+  background-color: hsl(228, 56%, 26%);
+  height: 80%;
+  max-width: 550px;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  color: hsl(243, 100%, 93%);
+  padding: 1.5rem;
+}
+
+.storage p.used {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.storage p.used span {
+  font-weight: bolder;
+}
+
+.bar {
+  width: 100%;
+  height: 1rem;
+  background: hsl(229, 57%, 11%);
+  border: 2px solid hsl(229, 57%, 11%);
+  border-radius: 10px;
+  margin: 10px 5px 5px;
+  position: relative;
+}
+
+.bar .tracker {
+  height: 100%;
+  margin-right: 100%;
+  width: 77%;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: inherit;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.tracker div.cir {
+  height: 10px;
+  width: 10px;
+  background: hsl(243, 100%, 93%);
+  margin-left: 100%;
+  position: absolute;
+  right: 2px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.storageLength {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.storageLeft {
+  position: absolute;
+  right: 0px;
+  height: 60px;
+  width: 150px;
+  background: hsl(243, 100%, 93%);
+  bottom: 45px;
+  border-radius: 10px 10px 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(229, 7%, 55%);
+  font-size: 0.8rem;
+}
+
+.storageLeft span {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  color: hsl(229, 57%, 11%);
+  margin-right: 5px;
+}
+
+.tria {
+  border-top: 16px solid hsl(243, 100%, 93%);
+  border-left: 16px solid transparent;
+  position: absolute;
+  right: 0px;
+  bottom: -16px;
+}
+
+@media only screen and (max-width: 750px) {
+  div.wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    min-height: auto;
+    height: auto;
+    max-height: 200vmin !important;
+    min-width: auto;
+    margin: 0;
+  }
+  .main,
+  .storage {
+    flex: 1;
+    align-self: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem;
+    min-height: 200px;
+  }
+  .main {
+    border-radius: 0 90px 0 0;
+  }
+  .storage {
+    position: relative;
+  }
+
+  .tria {
+    display: none;
+  }
+
+  .bar {
+    position: static !important;
+  }
+  .storageLeft {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    transform: translate(50%, 50%);
+    border-radius: 10px;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  body {
+    background-image: url(images/bg-mobile.png);
+    background-size: cover;
+  }
+}
